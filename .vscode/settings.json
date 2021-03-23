@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "linked_lists.h": "c",
+        "stdio.h": "c",
+        "malloc.h": "c",
+        "string.h": "c",
+        "limits": "c",
+        "*.tcc": "c",
+        "stdlib.h": "c",
+        "strings.h": "c"
+    }
+}
