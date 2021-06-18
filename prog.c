@@ -1,17 +1,18 @@
 #include <stdio.h>
 #include "linked_lists.h"
 
+void* iterateInt(void* num){
+    if ((int)num % 2 == 0) return "L";
+    else return "D";
+}
+
 int main(int argc, char* argv[]){
-    List list0 = new_list_unlinked(0);
-    list0.append(&list0, "n");
-    list0.append(&list0, "i");
-    list0.append(&list0, "g");
-    list0.append(&list0, "g");
-    list0.append(&list0, "e");
-    list0.append(&list0, "r");
-
-    list0.print(&list0, "%s");
-
-    system("pause");
+    List l = new _List(0);
+    List l1 = new _List(0);
+    l.append("HI");
+    l.print("%s");
+    
+    l1.append_("MAN");
+    l1.print("%s");
     return 0;
 }

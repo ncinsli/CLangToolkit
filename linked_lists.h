@@ -1,25 +1,39 @@
-typedef struct s_linked_node linked_node;
+// Некоторые дефы
+    #define new *
+    #define $$$_Explicit_methods
+    #define $$$_Explicit_declarations
+    #define $$$_Implicit_declarations
+    #define $$$_Implicit_methods
+    #define $$$_Constructor
+    #define $$$_Globals
+
+    typedef struct s_linked_node linked_node;
+    typedef struct s_list List;
 
 struct s_linked_node{
     void* value;
     linked_node* next;
 };
 
-typedef struct {
-    int length;
-    linked_node** nodes;
-} linked_list;
- 
-typedef struct s_list List;
-
 struct s_list{
-    void* (*get)(List*, int);
-    List* (*append)(List*, void*);
-    void (*print)(List*, char*);
-    List* (*set)(List*, int, void*);
-    linked_list* container;
+    $$$_Explicit_declarations
+        void* (*get_)(List*, int);
+        List* (*append_)(List*, void*);
+        void (*print_)(List*, char*);
+        List* (*set_)(List*, int, void*);
+        List* (*forEach_)(List*, void* (*foo(void* element)));
+
+    $$$_Implicit_declarations
+        void* (*get)(int);
+        List* (*append)(void*);
+        void (*print)(char*);
+        List* (*set)(int, void*);
+        List* (*forEach)(void* (*)(void* element));
+    // Поля
+        int length;
+        linked_node** nodes;
 };
 
-List* new_list(int);
-List new_list_unlinked(int);
-// void* foreach(linked_list*, void(*for_each)(linked_node*));
+$$$_Globals
+    List* this;
+    List* _List(int);
